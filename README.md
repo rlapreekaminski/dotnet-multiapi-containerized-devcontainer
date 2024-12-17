@@ -2,14 +2,15 @@
 
 This project contains two minimal APIs developed using **ASP.NET Core**. It is configured for local development using **Dev Containers** and Docker Compose.
 
----
-
 ## 📁 Project Structure
 
 The project structure is as follows:
 
 ```plaintext
 dotnet-multiapi-containerized-devcontainer/
+├── .devcontainer/            # Dev Container configuration
+│   ├── devcontainer.json
+│   └── Dockerfile            # Development environment configuration
 ├── .vscode/                  # VS Code configuration
 │   ├── tasks.json
 │   └── launch.json
@@ -25,9 +26,6 @@ dotnet-multiapi-containerized-devcontainer/
 ├── docker/                   # Dockerfiles for each API
 │   ├── Dockerfile.api1       # Dockerfile for API1
 │   ├── Dockerfile.api2       # Dockerfile for API2
-├── .devcontainer/            # Dev Container configuration
-│   ├── devcontainer.json
-│   └── Dockerfile            # Development environment configuration
 ├── docker-compose.yml        # Docker Compose for running both APIs
 └── README.md                 # Documentation (you are here)
 ```
@@ -36,9 +34,9 @@ dotnet-multiapi-containerized-devcontainer/
 
 Before starting, ensure you have the following tools installed:
 
-- Docker Desktop (or Docker Engine for Linux)
-- Visual Studio Code with the Dev Containers extension
-- .NET SDK 9.0 or later (for local development without containers)
+- **[Docker Desktop](https://www.docker.com/products/docker-desktop/)** (to run containers locally)
+- **[Visual Studio Code](https://code.visualstudio.com/)** with the **Dev Containers** extension (`ms-vscode-remote.remote-containers`)
+- **[.NET SDK 9.0](https://dotnet.microsoft.com/download)** only if you or a member of your team want to work outside the container
 
 ## 🚧 Getting Started
 
