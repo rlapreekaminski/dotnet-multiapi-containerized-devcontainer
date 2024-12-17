@@ -1,0 +1,16 @@
+# Utilisation du SDK pour la construction
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
+
+COPY ./src/api1/api1.csproj ./api1/
+RUN dotnet restore api1/api1.csproj
+
+COPY ./src/api1/ ./api1/
+WORKDIR /src/api1
+RUN dotnet publish -c Release -o /app
+
+# Utilisation de l'image runtime
+FROM mcr.microsoft.com/dotnet/aspnet:9.0
+WORKDIR /app
+COPY --from=build /app .
+ENTRYPOINT ["dotnet", "api1.dll"]

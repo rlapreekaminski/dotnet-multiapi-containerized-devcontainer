@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug API 1",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-api1",
+      "program": "${workspaceFolder}/src/api1/bin/Debug/net9.0/api1.dll",  // Chemin vers votre API compilée
+      "args": [],
+      "cwd": "${workspaceFolder}/src/api1/",  // Répertoire de l'API 1
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+    },
+    
+    {
+      "name": "Debug API 2",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-api2",
+      "program": "${workspaceFolder}/src/api2/bin/Debug/net9.0/api2.dll",  // Chemin vers votre API compilée
+      "args": [],
+      "cwd": "${workspaceFolder}/src/api2/",  // Répertoire de l'API 2
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+    }
+  ]
+}

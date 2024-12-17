@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-api1",
+      "type": "shell",
+      "command": "dotnet build src/api1",  // Compile l'API1
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Generated task by Debugger."
+    },
+    
+    {
+      "label": "build-api2",
+      "type": "shell",
+      "command": "dotnet build src/api2",  // Compile l'API2
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Generated task by Debugger."
+    }
+  ]
+}

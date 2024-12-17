@@ -1,0 +1,30 @@
+services:
+  # Première API
+  api1:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api1
+    ports:
+      - "5136:8080"    # Mapping du port local 5136 au port du conteneur 80
+    networks:
+      - monreseau
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - API_NAME=api1
+
+  # Deuxième API
+  api2:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api2
+    ports:
+      - "5137:8080"    # Mapping du port local 5137 au port du conteneur 80
+    networks:
+      - monreseau
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - API_NAME=api2
+
+networks:
+  monreseau:
+    driver: bridge
